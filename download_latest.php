@@ -11,10 +11,11 @@
  $result = curlDownload($url);
 
 $data = json_decode($result, true);
+
 $link = $data["PS"][0]["downloads"]["linux"]["link"];
 $md5sum = $data["PS"][0]["downloads"]["linux"]["checksumLink"];
-
-echo "Downloading $link\n";
+$version = $data["PS"][0]["version"];
+echo "Downloading version $version from $link\n";
 
 $filename = basename($link);
 $checksumName = basename($md5sum);
@@ -34,21 +35,26 @@ if ((int)$exitcode !== 0)
   exit;
 }
 
-shell_exec($dir."/update.sh");
-echo "Download and update complete. Execute the following commands to build and update the new php version\n";
 
+exec("cp debian/changelog.dist debian/changelog");
+exec(sprintf('dch -v %s -m "New upstream version" -D stable', $version));
+
+echo "Download and update complete. Now building new debian package..\n";
+
+// building a new version.
 echo "Building latest version.. \n";
 chdir ($dir);
 exec("debuild -us -uc -b");
 
 $debname = str_replace("-","_",strtolower(basename($filename,".tar.gz"))."_all.deb");
 echo "Build complete. Install the new version by using \n";
-echo "sudo dpkg -i ../$debname";
+echo "sudo dpkg -i ../$debname"."\n";
 
+// download a file to a location..
 function curlDownload($url, $destination = null)
 {
  $ch = curl_init();
- //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
  curl_setopt($ch, CURLOPT_URL, $url);
  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
