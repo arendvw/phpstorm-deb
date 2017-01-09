@@ -1,16 +1,13 @@
-Source: phpstorm
+Source: rider
 Section: vcs
 Priority: optional
 Maintainer: Casper Langemeijer <casper@langemeijer.eu>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.8.4
-Homepage: http://www.jetbrains.com/phpstorm/
+Homepage: http://www.jetbrains.com/rider/
 
-Package: phpstorm
+Package:rider
 Architecture: all
 Depends: openjdk-7-jre | openjdk-8-jre | oracle-java7-installer | oracle-java8-installer | oracle-java6-installer | sun-java7-jdk | sun-java8-jdk | sun-java6-jdk, libxcursor1, libxfixes3, libxi6, libxrender1, libxtst6
 Recommends: fonts-dejavu-core, fonts-freefont-otf, ttf-bitstream-vera, fonts-cantarell, fonts-droid, ttf-mscorefonts-installer
-Description: PhpStorm is a lightweight and smart PHP IDE focused on developer productivity 
- that deeply understands your code, provides smart code completion, quick 
- navigation and on-the-fly error checking. It is always ready to help you 
- shape your code, run unit-tests or provide visual debugging.
+Description:  JetBrains Rider is a new .NET IDE based on the IntelliJ platform and ReSharper. Rider supports .NET Core, .NET Framework and Mono based projects. This lets you develop a wide array of applications including .NET desktop apps, services and libraries, Unity games, ASP.NET and ASP.NET Core web applications.

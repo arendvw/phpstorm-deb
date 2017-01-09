@@ -4,10 +4,10 @@
     <schema>
       <key>/schemas/desktop/gnome/url-handlers/pbfile/enabled</key>
       <applyto>/desktop/gnome/url-handlers/pbfile/enabled</applyto>
-      <owner>phpstorm</owner>
+      <owner>rider</owner>
       <type>bool</type>
       <default>true</default>
-      <gettext_domain>phpstorm</gettext_domain>
+      <gettext_domain>rider</gettext_domain>
       <locale name="C">
         <short>Whether the specified command should handle "pbfile" URLs</short>
         <long>True if the command specified in the "command" key should handle "pbfile" URLs.</long>
@@ -17,10 +17,10 @@
     <schema>
       <key>/schemas/desktop/gnome/url-handlers/pbfile/command</key>
       <applyto>/desktop/gnome/url-handlers/pbfile/command</applyto>
-      <owner>phpstorm</owner>
+      <owner>rider</owner>
       <type>string</type>
-      <default>/home/casper/phpstorm-url-handler "%s"</default>
-      <gettext_domain>phpstorm</gettext_domain>
+      <default>/home/casper/rider-url-handler "%s"</default>
+      <gettext_domain>rider</gettext_domain>
       <locale name="C">
         <short>The handler for "pbfile" URLs</short>
         <long>The command used to handle "pbfile" URLs, if enabled.</long>
@@ -30,10 +30,10 @@
     <schema>
       <key>/schemas/desktop/gnome/url-handlers/pbfile/needs_terminal</key>
       <applyto>/desktop/gnome/url-handlers/pbfile/needs_terminal</applyto>
-      <owner>phpstorm</owner>
+      <owner>rider</owner>
       <type>bool</type>
       <default>false</default>
-      <gettext_domain>phpstorm</gettext_domain>
+      <gettext_domain>rider</gettext_domain>
       <locale name="C">
         <short>Run the command in a terminal</short>
         <long>True if the command used to handle this type of URL should be run in a terminal.</long>

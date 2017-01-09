@@ -3,7 +3,7 @@
 DEBVERS := $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
 VERSION := $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[~-].*//')
 
-BUILD=$(shell tar -tzf PhpStorm-$(VERSION).tar.gz | head -n 1 | cut -d/ -f1)
+BUILD=$(shell tar -tzf riderRS-$(VERSION).tar.gz | head -n 1 | cut -d/ -f1)
 
 build: build-stamp
 build-stamp:	
@@ -22,17 +22,17 @@ install: build
 	dh_installdirs
 
 	# Untar and move upstream version
-	tar --directory $(CURDIR)/debian/phpstorm/opt -xzf PhpStorm-$(VERSION).tar.gz
-	mv $(CURDIR)/debian/phpstorm/opt/$(BUILD) $(CURDIR)/debian/phpstorm/opt/PhpStorm
+	tar --directory $(CURDIR)/debian/rider/opt -xzf riderRS-$(VERSION).tar.gz
+	mv $(CURDIR)/debian/rider/opt/$(BUILD) $(CURDIR)/debian/rider/opt/rider
 
 	# Create desktop item for menu
-	cp phpstorm.desktop $(CURDIR)/debian/phpstorm/usr/share/applications
+	cp rider.desktop $(CURDIR)/debian/rider/usr/share/applications
 
 	# Create symlink in /usr/bin
-	dh_link opt/PhpStorm/bin/phpstorm.sh usr/bin/phpstorm
+	dh_link opt/rider/bin/rider.sh usr/bin/rider
 
 	# Create gconf defaults for pbfile:// urls
-	cp phpstorm.schemas $(CURDIR)/debian/phpstorm/usr/share/gconf/schemas
+	cp rider.schemas $(CURDIR)/debian/rider/usr/share/gconf/schemas
 
 
 binary-indep: build install
