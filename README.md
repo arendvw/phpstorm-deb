@@ -1,35 +1,25 @@
 !! I CHANGED THE WAY THIS TOOL WORKS. SEE BELOW !!
 ==================================================
 
-phpstorm-deb
+rider-deb
 =============
 
-Build scripts to easily create a `.deb` package for PhpStorm.
+Build scripts to easily create a `.deb` package for rider
 
 
 Dependencies
 ------------
 
-You will need the `devscripts` `debhelper` `php` and `php-curl` packages installed in order to build the PhpStorm `.deb` file:
+You will need the `devscripts` `debhelper` `php` and `php-curl` packages installed in order to build the rider .deb` file:
 
 ```sh
-apt-get install devscripts debhelper php php-curl
+apt-get install devscripts debhelper
 ```
-
-Build (Automatic)
-----------------
-* Run the `download_latest.php` file
-```sh
-php download_latest.php
-```
-
-This will execute all steps described below.
-
 
 Building (Manuallly)
 --------------------
 
-* Download the `.tar.gz` file from [PhpStorm's download page](https://www.jetbrains.com/phpstorm/download/index.html) and place it in the root directory of this repo.
+* Download the `.tar.gz` file from [Rider's download page](https://www.jetbrains.com/rider/download/index.html) and place it in the root directory of this repo.
 
 * Create a new debian/changelog file using the provided update.sh script:
 ```sh
@@ -50,7 +40,7 @@ Installing
 Install the package with the `dpkg` command:
 
 ```sh
-dpkg -i PhpStorm...
+dpkg -i ../rider[version].deb
 ```
 
 Alternatively, you can create your own [simple repo](https://wiki.debian.org/DebianRepository/HowTo/TrivialRepository) or 
