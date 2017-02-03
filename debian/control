@@ -1,13 +1,13 @@
-Source: rider
+Source: intellij-idea
 Section: vcs
 Priority: optional
-Maintainer: Casper Langemeijer <casper@langemeijer.eu>
-Build-Depends: debhelper (>= 5)
+Maintainer: Arend van Waart <arendvw@gmail.com>
+Build-Depends: debhelper (>= 9)
 Standards-Version: 3.8.4
-Homepage: http://www.jetbrains.com/rider/
+Homepage: http://www.jetbrains.com/idea/
 
-Package:rider
+Package:intellij-idea
 Architecture: all
 Depends: openjdk-7-jre | openjdk-8-jre | oracle-java7-installer | oracle-java8-installer | oracle-java6-installer | sun-java7-jdk | sun-java8-jdk | sun-java6-jdk, libxcursor1, libxfixes3, libxi6, libxrender1, libxtst6
 Recommends: fonts-dejavu-core, fonts-freefont-otf, ttf-bitstream-vera, fonts-cantarell, fonts-droid, ttf-mscorefonts-installer
-Description:  JetBrains Rider is a new .NET IDE based on the IntelliJ platform and ReSharper. Rider supports .NET Core, .NET Framework and Mono based projects. This lets you develop a wide array of applications including .NET desktop apps, services and libraries, Unity games, ASP.NET and ASP.NET Core web applications.
+Description:  IntelliJ IDEA is a Java integrated development environment (IDE) for developing computer software. It is developed by JetBrains (formerly known as IntelliJ), and is available as an Apache 2 Licensed community edition, and in a proprietary commercial edition. Both can be used for commercial development.

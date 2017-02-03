@@ -19,7 +19,7 @@ apt-get install devscripts debhelper
 Building (Manuallly)
 --------------------
 
-* Download the `.tar.gz` file from [Rider's download page](https://www.jetbrains.com/rider/download/index.html) and place it in the root directory of this repo.
+* Download the `.tar.gz` file from [IntelliJ's download page](https://www.jetbrains.com) and place it in the root directory of this repo.
 
 * Create a new debian/changelog file using the provided update.sh script:
 ```sh
@@ -32,7 +32,7 @@ Building (Manuallly)
 debuild -us -uc -b
 ```
 
-* Please 'Star' or 'Watch' the repo on github: https://github.com/langemeijer/phpstorm-deb/stargazers
+* Please 'Star' or 'Watch' the repo on github: https://github.com/arendvw/phpstorm-deb/stargazers
 
 Installing
 ----------
@@ -40,7 +40,7 @@ Installing
 Install the package with the `dpkg` command:
 
 ```sh
-dpkg -i ../rider[version].deb
+dpkg -i ../intellij-idea[version].deb
 ```
 
 Alternatively, you can create your own [simple repo](https://wiki.debian.org/DebianRepository/HowTo/TrivialRepository) or 

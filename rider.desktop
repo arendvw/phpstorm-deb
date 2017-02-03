@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Rider
-Comment=Rider IDE
-Exec=/opt/Rider/bin/rider.sh %U
-Terminal=false
-Type=Application
-Icon=/opt/Rider/bin/rider.png
-Categories=GNOME;GTK;Development;

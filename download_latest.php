@@ -7,14 +7,14 @@
  array_map('unlink', glob("*.sha256"));
 
  echo "Downloading new version\n";
- $url = "https://data.services.jetbrains.com/products/releases?code=PS&latest=true";
+ $url = "https://data.services.jetbrains.com/products/releases?code=IIU&latest=true";
  $result = curlDownload($url);
 
 $data = json_decode($result, true);
 
-$link = $data["PS"][0]["downloads"]["linux"]["link"];
-$md5sum = $data["PS"][0]["downloads"]["linux"]["checksumLink"];
-$version = $data["PS"][0]["version"];
+$link = $data["IIU"][0]["downloads"]["linux"]["link"];
+$md5sum = $data["IIU"][0]["downloads"]["linux"]["checksumLink"];
+$version = $data["IIU"][0]["version"];
 echo "Downloading version $version from $link\n";
 
 $filename = basename($link);

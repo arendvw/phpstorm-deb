@@ -1,10 +1,10 @@
 #!/bin/bash
 
-NUMBER_OF_FILES=`ls -1 riderRS-*.tar.gz 2> /dev/null | wc -l`
+NUMBER_OF_FILES=`ls -1 ideaIU-*.tar.gz 2> /dev/null | wc -l`
 
 if [ "$NUMBER_OF_FILES" == "0" ]
 then
-	echo "There are no Rider source packages in this directory."
+	echo "There are no IntelliJ-idea source packages in this directory."
 	echo "Please go to https://www.jetbrains.com/rider/download to download the .tar.gz file and try again."
 	exit
 fi
@@ -17,7 +17,7 @@ then
 	exit
 fi
 
-VERSION=`ls riderRS-*.tar.gz | sed -r 's/riderRS-([0-9\.]+).tar.gz/\1/'`
+VERSION=`ls ideaIU-*.tar.gz | sed -r 's/ideaIU-([0-9\.]+).tar.gz/\1/'`
 
 cp debian/changelog.dist debian/changelog
 

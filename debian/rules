@@ -3,7 +3,7 @@
 DEBVERS := $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
 VERSION := $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[~-].*//')
 
-BUILD=$(shell tar -tzf riderRS-$(VERSION).tar.gz | head -n 1 | cut -d/ -f1)
+BUILD=$(shell tar -tzf ideaIU-$(VERSION).tar.gz | head -n 1 | cut -d/ -f1)
 
 build: build-stamp
 build-stamp:	
@@ -22,17 +22,17 @@ install: build
 	dh_installdirs
 
 	# Untar and move upstream version
-	tar --directory $(CURDIR)/debian/rider/opt -xzf riderRS-$(VERSION).tar.gz
-	mv $(CURDIR)/debian/rider/opt/$(BUILD) $(CURDIR)/debian/rider/opt/rider
+	tar --directory $(CURDIR)/debian/intellij-idea/opt -xzf ideaIU-$(VERSION).tar.gz
+	mv $(CURDIR)/debian/intellij-idea/opt/$(BUILD) $(CURDIR)/debian/intellij-idea/opt/intellij-idea
 
 	# Create desktop item for menu
-	cp rider.desktop $(CURDIR)/debian/rider/usr/share/applications
+	cp intellij-idea.desktop $(CURDIR)/debian/intellij-idea/usr/share/applications
 
 	# Create symlink in /usr/bin
-	dh_link opt/rider/bin/rider.sh usr/bin/rider
+	dh_link opt/intellij-idea/bin/idea.sh usr/bin/idea
 
 	# Create gconf defaults for pbfile:// urls
-	cp rider.schemas $(CURDIR)/debian/rider/usr/share/gconf/schemas
+	cp intellij-idea.schemas $(CURDIR)/debian/intellij-idea/usr/share/gconf/schemas
 
 
 binary-indep: build install
