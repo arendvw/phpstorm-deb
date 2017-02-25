@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=IntelliJ Idea Ultimate
+Comment=IntelliJ Idea Ultimate
+Exec=/opt/intellij-idea/bin/idea.sh %U
+Terminal=false
+Type=Application
+Icon=/opt/intellij-idea/bin/idea.png
+Categories=GNOME;GTK;Development;
